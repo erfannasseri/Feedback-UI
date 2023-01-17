@@ -1,13 +1,17 @@
+import {FaTimes} from 'react-icons/fa'
 import React from 'react'
-function FeedbackItem(props) {
+import Card from './shared/Card' 
+function FeedbackItem({item,deleteHandler}) {
     
 
   return (
-    <div className='card'>
-        <div className='num-display'>{props.rating}</div>
-        <div className='text-display'>{props.text}</div>
-        
-    </div>
+    <Card reverse = {false}>
+        <div className='num-display'>{item.rating}</div>
+        <button onClick={deleteHandler} className='close'>
+          <FaTimes color='purple'/>
+        </button>
+        <div className='text-display'>{item.text}</div>
+    </Card>
   )
 }
 

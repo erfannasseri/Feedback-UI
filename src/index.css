@@ -37,7 +37,7 @@ header {
   color: #333;
   border-radius: 15px;
   padding: 40px 50px;
-  margin: 20px 0;
+  margin: 40px 0;
   position: relative;
 }
 
@@ -130,6 +130,7 @@ input:focus {
   top: -10px;
   left: -10px;
 }
+
 
 .close,
 .edit {
