@@ -5,8 +5,8 @@ function FeedbackItem({item,deleteHandler}) {
     
 
   return (
-    <Card reverse = {false}>
-        <div className='num-display'>{item.rating}</div>
+    <Card reverse = {false} >
+        <div className='num-display'>{item.rating} </div>
         <button onClick={deleteHandler} className='close'>
           <FaTimes color='purple'/>
         </button>

@@ -1,7 +1,7 @@
 import React from 'react'
 import Feedbackitem from './Feedbackitem.jsx'
 
-function Feedbacklist({feedback , deleteHandler}) {
+const Feedbacklist=({feedback , deleteHandler})=> {
 
 
    if (!feedback || feedback.length===0){
