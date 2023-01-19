@@ -33,6 +33,7 @@ function Feedbackform({submit}) {
           rating
         };
         submit(newFeedback)
+        setinput('')
       }
   return (
     <Card>      
