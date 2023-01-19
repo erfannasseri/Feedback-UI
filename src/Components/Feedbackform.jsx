@@ -4,11 +4,11 @@ import {useState} from 'react'
 import Button from './shared/Button';
 import RatingSelect from './RatingSelect';
 
-function Feedbackform() {
-    const [input, setinput] = useState("");
+function Feedbackform({submit}) {
+    const [text, setinput] = useState("");
     const [btnDisable, setBtnDisabled] = useState(true);
     const [Massage, setMessage] = useState("");
-    const [rateing, setrateing] = useState();
+    const [rating, setrateing] = useState(5);
     
     const change =({ target: { value } }) => { // 👈  get the value
         if (value === '') {
@@ -26,14 +26,22 @@ function Feedbackform() {
         setinput(value)
       }
     
+      const handleFeedback = (e)=>{
+        e.preventDefault()
+        const newFeedback ={ 
+          text,
+          rating
+        };
+        submit(newFeedback)
+      }
   return (
     <Card>      
-        <form>
+        <form onSubmit={handleFeedback}>
             <h2>How Would you rate your service with us?</h2>
             <RatingSelect select={(rateing)=>setrateing(rateing)}/>
             <div className='input-group'>
-                <input onChange={change} type="text" placeholder='Write Review' value={input}/>
-                <Button version={'secondary'} isDisabled={btnDisable}>send</Button>               
+                <input onChange={change} type="text" placeholder='Write Review' value={text}/>
+                <Button type={'submit'} version={'secondary'} isDisabled={btnDisable}>send</Button>               
             </div>
             <p> {Massage} </p>
         </form>
