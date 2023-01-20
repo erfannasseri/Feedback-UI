@@ -9,7 +9,7 @@ function AboutPage() {
             <h1>Hello</h1>
             <p>My name is Erfan Nasseri and i`m a web developer and Graphic designer</p>
             <p>this is a react app to leave feedback</p>
-            <Link to={'/'}> Go Back </Link>            
+            <Link to={'/Feedback-UI'}> Go Back </Link>            
         </div>
     
     </Card>
