@@ -33,7 +33,7 @@ function App() {
     <Header/>
     <div className='container'>
     <Routes>
-      <Route  path='/' exact element= {
+      <Route path='/Feedback-UI' element= {
         <>
                 <Feedbackform submit = {addFeedback}/>
                 <Feedbackstats feedback={Feedback}/>
