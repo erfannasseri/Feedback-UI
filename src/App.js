@@ -33,7 +33,7 @@ function App() {
     <Header/>
     <div className='container'>
     <Routes>
-      <Route index element= {
+      <Route  path='/' exact element= {
         <>
                 <Feedbackform submit = {addFeedback}/>
                 <Feedbackstats feedback={Feedback}/>
