@@ -1,15 +1,18 @@
 import React from 'react'
 import Card from './shared/Card'
-import {useState} from 'react'
+import {useState,useContext} from 'react'
 import Button from './shared/Button';
 import RatingSelect from './RatingSelect';
+import FeedbackContext from './FeedbackContext';
 
-function Feedbackform({submit}) {
+
+function Feedbackform() {
     const [text, setinput] = useState("");
     const [btnDisable, setBtnDisabled] = useState(true);
     const [Massage, setMessage] = useState("");
     const [rating, setrateing] = useState(5);
-    
+    const {addFeedback} = useContext(FeedbackContext)
+
     const change =({ target: { value } }) => { // 👈  get the value
         if (value === '') {
           setBtnDisabled(true)
@@ -32,7 +35,7 @@ function Feedbackform({submit}) {
           text,
           rating
         };
-        submit(newFeedback)
+        addFeedback(newFeedback)
         setinput('')
       }
   return (

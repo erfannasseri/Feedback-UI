@@ -1,19 +1,21 @@
 import React from 'react'
+import { useContext } from 'react'
+import FeedbackContext from './FeedbackContext';
 
 
+function Feedbackstats() {
 
-function Feedbackstats({feedback}) {
-    let Avrage =
-        feedback.reduce((acc,cur)=>{
-            return acc+cur.rating
-        },0)/feedback.length
+  const {feedback} = useContext(FeedbackContext);
 
-        Avrage = Avrage.toFixed(1).replace(/[.,]0$/,'')
+  const average =
+  feedback.length === 0
+    ? 0
+    : feedback.reduce((acc, { rating }) => acc + rating, 0) / feedback.length
     
   return (
     <div className="feedback-stats">
-        <h3>Reviews : {feedback.length}</h3>
-        <h3>Rating Avrage : {Avrage}</h3>
+        <h4>Reviews : {feedback.length}</h4>
+        <h4>Average Rating: {average.toFixed(1).replace(/[.,]0$/, '')}</h4>
     </div>
   )
 }
